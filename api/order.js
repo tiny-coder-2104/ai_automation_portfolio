@@ -24,9 +24,19 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'invalid email' });
   }
 
-  const r = await sendOrder(order);
+  if (!process.env.AGENTMAIL_API_KEY) {
+    return res.status(503).json({ error: 'not configured' });
+  }
+
+  let r;
+  try {
+    r = await sendOrder(order);
+  } catch {
+    return res.status(502).json({ error: 'failed to send' });
+  }
   if (r.status >= 200 && r.status < 300) {
     return res.json({ ok: true });
   }
+  console.error('agentmail send failed:', r.status, r.body.slice(0, 300));
   res.status(502).json({ error: 'failed to send' });
 }
