@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Automation Solutions — AI chatbots, workflow automation, and web applications. Based in Davao City, Philippines." />
+    <title>AI Automation Solutions</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span class="brand">AI Automation Solutions</span>
+        <span class="location">🇵🇭 Davao City, Philippines</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>AI Automation Solutions</h1>
+        <p>
+          I build intelligent systems that automate your business processes. From AI
+          chatbots to workflow automation, I help businesses in the Philippines and
+          worldwide work smarter.
+        </p>
+        <button class="btn" data-open-chat>Get In Touch</button>
+      </section>
+
+      <section class="services">
+        <h2>What I Build</h2>
+        <div class="grid">
+          <article>
+            <h3>🤖 AI Chatbots &amp; Agents</h3>
+            <p>Custom AI assistants that handle customer support, scheduling, and inquiries. Built with modern LLMs and integrated with your existing systems.</p>
+          </article>
+          <article>
+            <h3>🔄 Workflow Automation</h3>
+            <p>Connect your tools and automate repetitive tasks. Data entry, report generation, email processing, and more — hands-free.</p>
+          </article>
+          <article>
+            <h3>🌐 Web Applications</h3>
+            <p>Booking systems, dashboards, and internal tools. Modern stack (React/Node.js/Supabase) deployed on Vercel for free.</p>
+          </article>
+          <article>
+            <h3>🔍 Browser Automation</h3>
+            <p>Data scraping, form filling, and web interaction at scale. Perfect for market research, lead generation, and monitoring.</p>
+          </article>
+          <article>
+            <h3>📊 Data Processing</h3>
+            <p>Transform, clean, and analyze your data. CSV/JSON processing, API integrations, and automated reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects">
+        <h2>Recent Projects</h2>
+        <div class="grid">
+          <article>
+            <h3>📊 DavaoBook</h3>
+            <h4>Booking Management System</h4>
+            <p>Full-stack booking platform for Davao tourism. Supabase backend, Vercel hosting, real-time availability.</p>
+            <div class="tags"><span>React</span><span>Supabase</span><span>Vercel</span></div>
+          </article>
+          <article>
+            <h3>🧰 TinyCoder Toolbox</h3>
+            <h4>PWA Web Toolbox</h4>
+            <p>Developer utilities in your browser: JSON formatter, Base64, regex tester, URL encoder, UUID generator. Installable, works offline. Live at <a href="https://toolbox-lilac-three.vercel.app" target="_blank" rel="noopener">toolbox-lilac-three.vercel.app</a>.</p>
+            <div class="tags"><span>Vanilla JS</span><span>PWA</span><span>Vercel</span></div>
+          </article>
+          <article>
+            <h3>🎮 Shadow Trader</h3>
+            <h4>Space Trading Game</h4>
+            <p>Mobile game built with Godot 4.7.1. Features dynamic market, black market, warp system, and procedural encounters.</p>
+            <div class="tags"><span>Godot 4</span><span>GDScript</span><span>Android</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Let's Build Something</h2>
+        <p>Ready to automate your business? Let's talk about your project.</p>
+        <button class="btn" data-open-chat>Get In Touch</button>
+      </section>
+    </main>
+
+    <footer>© 2026 AI Automation Solutions | Davao City, Philippines</footer>
+
+    <div id="chat" class="chat" hidden>
+      <div class="chat-head">
+        <span>Assistant</span>
+        <button data-close-chat aria-label="Close chat">✕</button>
+      </div>
+      <div class="chat-body" id="chat-body" aria-live="polite"></div>
+      <form class="chat-input" id="chat-form">
+        <input type="text" id="chat-text" placeholder="Type your message…" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <form id="order-form" action="https://formsubmit.co/tiny-coder-2104@agentmail.to" method="POST" hidden>
+      <input type="hidden" name="_subject" value="New portfolio order request" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="name" id="order-name" />
+      <input type="hidden" name="email" id="order-email" />
+      <input type="hidden" name="project type" id="order-type" />
+      <input type="hidden" name="details" id="order-details" />
+    </form>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
