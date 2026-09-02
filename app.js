@@ -2,8 +2,10 @@ const chat = document.getElementById('chat');
 const body = document.getElementById('chat-body');
 const form = document.getElementById('chat-form');
 const input = document.getElementById('chat-text');
+const themeToggle = document.getElementById('theme-toggle');
 
 const history = [];
+let chatOpened = false;
 
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -64,8 +66,6 @@ async function send() {
   input.value = '';
   render({ role: 'user', text });
   history.push({ role: 'user', content: text });
-  const typing = { role: 'bot', text: '…' };
-  typing.el = null;
   const tdiv = document.createElement('div');
   tdiv.className = 'msg bot typing';
   tdiv.textContent = 'typing…';
@@ -97,11 +97,28 @@ async function send() {
 
 form.addEventListener('submit', e => { e.preventDefault(); send(); });
 
-document.querySelectorAll('[data-open-chat]').forEach(b => b.addEventListener('click', () => {
+function openChat() {
   chat.hidden = false;
-  if (history.length === 0) {
-    render({ role: 'bot', text: 'Hi! I can answer questions about my services and pricing. Tell me about your project — or if you are ready to order, give me your name, email, project type, and a short description.' });
+  if (!chatOpened) {
+    chatOpened = true;
+    render({ role: 'bot', text: 'Hi! I can help with:\n\n• AI chatbots & agents\n• Workflow automation\n• Web applications\n• Browser automation\n• Data processing\n\nAsk me anything, or tell me about your project to get started!' });
   }
   input.focus();
-}));
+}
+
+document.querySelectorAll('[data-open-chat]').forEach(b => b.addEventListener('click', openChat));
 document.querySelector('[data-close-chat]').addEventListener('click', () => { chat.hidden = true; });
+
+// Theme toggle
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+  themeToggle.textContent = '🌙';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  themeToggle.textContent = isLight ? '🌙' : '☀️';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});

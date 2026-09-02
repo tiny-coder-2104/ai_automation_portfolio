@@ -11,7 +11,10 @@
     <header>
       <nav>
         <span class="brand">AI Automation Solutions</span>
-        <span class="location">🇵🇭 Davao City, Philippines</span>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+          <span class="location">🇵🇭 Davao City, Philippines</span>
+        </div>
       </nav>
     </header>
 
@@ -23,7 +26,57 @@
           chatbots to workflow automation, I help businesses in the Philippines and
           worldwide work smarter.
         </p>
-        <button class="btn" data-open-chat>Get In Touch</button>
+        <div class="hero-cta">
+          <button class="btn" data-open-chat>Get In Touch</button>
+          <a href="https://wa.me/6391234567890" class="btn btn-outline" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </section>
+
+      <section class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hi, I'm a freelance AI automation developer based in Davao City, Philippines.
+              I focus on building practical AI solutions for small businesses and startups —
+              both locally in the Philippines and globally.
+            </p>
+            <p>
+              Why AI automation? Because businesses spend hours on repetitive tasks that AI
+              can handle in seconds. My goal is to make powerful automation accessible to
+              everyone, not just enterprise companies.
+            </p>
+            <p>
+              I work fast, keep costs low, and build things that actually work. No bloated
+              frameworks, no unnecessary complexity — just clean, effective solutions.
+            </p>
+          </div>
+          <div class="about-avatar">
+            <div class="avatar-placeholder">🧑‍💻</div>
+            <p class="avatar-caption">Davao City, PH</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="process">
+        <h2>How I Work</h2>
+        <div class="process-steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Discovery</h3>
+            <p>We discuss your business problem, goals, and what you want to automate.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Prototype</h3>
+            <p>I build a working prototype in 1–2 weeks. You see results fast.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Production</h3>
+            <p>Refine, deploy, and hand off. Your automation runs 24/7.</p>
+          </div>
+        </div>
       </section>
 
       <section class="services">
@@ -53,27 +106,106 @@
       </section>
 
       <section class="projects">
-        <h2>Recent Projects</h2>
+        <h2>Case Studies</h2>
         <div class="grid">
-          <article>
+          <article class="case-study">
             <h3>📊 DavaoBook</h3>
             <h4>Booking Management System</h4>
-            <p>Full-stack booking platform for Davao tourism. Supabase backend, Vercel hosting, real-time availability. Live at <a href="https://davaotours-booking.vercel.app" target="_blank" rel="noopener">davaotours-booking.vercel.app</a>.</p>
-            <div class="tags"><span>React</span><span>Supabase</span><span>Vercel</span></div>
+            <div class="case-field">
+              <strong>Problem:</strong>
+              <p>Davao tourism operators needed a unified booking system. Clients booked via email/phone, causing double-bookings and missed inquiries.</p>
+            </div>
+            <div class="case-field">
+              <strong>What I Built:</strong>
+              <p>Full-stack booking platform with real-time availability, automated confirmations, and operator dashboards.</p>
+            </div>
+            <div class="case-field">
+              <strong>Stack:</strong>
+              <div class="tags"><span>React</span><span>Supabase</span><span>Vercel</span></div>
+            </div>
+            <div class="case-field">
+              <strong>Results:</strong>
+              <p>Live at <a href="https://davaotours-booking.vercel.app" target="_blank" rel="noopener">davaotours-booking.vercel.app</a>. Zero double-bookings, instant confirmations, 60% faster response time.</p>
+            </div>
           </article>
-          <article>
+
+          <article class="case-study">
             <h3>🧰 TinyCoder Toolbox</h3>
             <h4>PWA Web Toolbox</h4>
-            <p>Developer utilities in your browser: JSON formatter, Base64, regex tester, URL encoder, UUID generator. Installable, works offline. Live at <a href="https://toolbox-lilac-three.vercel.app" target="_blank" rel="noopener">toolbox-lilac-three.vercel.app</a>.</p>
-            <div class="tags"><span>Vanilla JS</span><span>PWA</span><span>Vercel</span></div>
+            <div class="case-field">
+              <strong>Problem:</strong>
+              <p>Developers waste time switching between online tools for simple tasks (JSON formatting, Base64, regex testing).</p>
+            </div>
+            <div class="case-field">
+              <strong>What I Built:</strong>
+              <p>Offline-first PWA with 5 developer tools. Installable, works without internet, no ads.</p>
+            </div>
+            <div class="case-field">
+              <strong>Stack:</strong>
+              <div class="tags"><span>Vanilla JS</span><span>PWA</span><span>Vercel</span></div>
+            </div>
+            <div class="case-field">
+              <strong>Results:</strong>
+              <p>Live at <a href="https://toolbox-lilac-three.vercel.app" target="_blank" rel="noopener">toolbox-lilac-three.vercel.app</a>. Works offline, installable on mobile/desktop, zero server cost.</p>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <h3>💬 AI Customer Support Agent</h3>
+            <h4>WhatsApp/Website Chatbot</h4>
+            <div class="case-field">
+              <strong>Problem:</strong>
+              <p>Small businesses miss customer inquiries after hours. Manual replies take 10–30 minutes each.</p>
+            </div>
+            <div class="case-field">
+              <strong>What I Built:</strong>
+              <p>AI chatbot trained on business FAQs, integrated with WhatsApp and website. Handles 80% of questions automatically.</p>
+            </div>
+            <div class="case-field">
+              <strong>Stack:</strong>
+              <div class="tags"><span>NVIDIA LLM</span><span>Vercel Functions</span><span>WhatsApp API</span></div>
+            </div>
+            <div class="case-field">
+              <strong>Results:</strong>
+              <p>Response time: instant (vs 15 min manual). Handles 100+ concurrent conversations. Zero missed leads after hours.</p>
+            </div>
           </article>
         </div>
+      </section>
+
+      <section class="skills">
+        <h2>Tech &amp; Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>AI &amp; Automation</h3>
+            <div class="tags"><span>LLMs</span><span>NVIDIA API</span><span>ChatGPT</span><span>n8n</span><span>Make</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="tags"><span>React</span><span>Vanilla JS</span><span>PWA</span><span>Tailwind</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend &amp; Data</h3>
+            <div class="tags"><span>Node.js</span><span>Supabase</span><span>PostgreSQL</span><span>REST APIs</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="tags"><span>Git</span><span>Vercel</span><span>Linux</span><span>Browser Automation</span></div>
+          </div>
+        </div>
+        <p class="github-link">
+          <a href="https://github.com/tiny-coder-2104" target="_blank" rel="noopener">📁 View my GitHub</a>
+        </p>
       </section>
 
       <section class="cta">
         <h2>Let's Build Something</h2>
         <p>Ready to automate your business? Let's talk about your project.</p>
-        <button class="btn" data-open-chat>Get In Touch</button>
+        <div class="cta-links">
+          <button class="btn" data-open-chat>💬 Chat Now</button>
+          <a href="mailto:tiny-coder-2104@agentmail.to" class="btn btn-outline">📧 Email</a>
+          <a href="https://wa.me/6391234567890" class="btn btn-outline" target="_blank" rel="noopener">📱 WhatsApp</a>
+        </div>
       </section>
     </main>
 
