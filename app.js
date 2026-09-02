@@ -2,7 +2,6 @@ const chat = document.getElementById('chat');
 const body = document.getElementById('chat-body');
 const form = document.getElementById('chat-form');
 const input = document.getElementById('chat-text');
-const orderForm = document.getElementById('order-form');
 
 const history = [];
 
@@ -33,12 +32,26 @@ function renderOrder(order) {
   const btn = document.createElement('button');
   btn.className = 'btn';
   btn.textContent = 'Send Order Request';
-  btn.onclick = () => {
-    orderForm.name.value = order.name;
-    orderForm.email.value = order.email;
-    orderForm['project type'].value = order.type;
-    orderForm.details.value = order.details;
-    orderForm.submit();
+  btn.onclick = async () => {
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order)
+      });
+      const ok = res.ok;
+      btn.remove();
+      const done = document.createElement('p');
+      done.textContent = ok
+        ? `Order sent! I'll get back to you at ${order.email} soon.`
+        : 'Failed to send. Please email tiny-coder-2104@agentmail.to directly.';
+      panel.appendChild(done);
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send Order Request';
+    }
   };
   panel.appendChild(btn);
   body.appendChild(panel);
