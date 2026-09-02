@@ -51,12 +51,11 @@ function postJson(url, payload, key) {
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method not allowed' });
 
-  let messages = [];
-  try {
-    messages = JSON.parse(req.body || '[]').messages || [];
-  } catch {
-    return res.status(400).json({ error: 'bad request' });
+  let body = req.body;
+  if (typeof body === 'string') {
+    try { body = JSON.parse(body); } catch { body = null; }
   }
+  let messages = body?.messages || [];
 
   if (!Array.isArray(messages)) return res.status(400).json({ error: 'bad request' });
   messages = messages.slice(-12).map(m => ({
